@@ -1,5 +1,5 @@
 #!/bin/bash
-# Decleration of variables 
+# Defining Variables
 name=Omar
 age=24
 #displaying variables
