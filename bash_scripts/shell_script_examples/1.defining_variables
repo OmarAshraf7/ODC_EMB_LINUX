@@ -1,0 +1,7 @@
+#!/bin/bash
+# Decleration of variables 
+name=Omar
+age=24
+#displaying variables
+echo $name
+echo $age
