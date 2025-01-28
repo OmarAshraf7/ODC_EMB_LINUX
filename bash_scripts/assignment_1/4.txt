@@ -1,0 +1,8 @@
+#Explain the differences between standard output (stdout) and standard error (stderr)
+
+Standard Output (stdout): Used for normal program output, with file descriptor 1,
+displayed on the terminal or redirected.
+Standard Error (stderr): Used for error messages,
+with file descriptor 2, also displayed on the terminal or redirected separately.
+stdout and stderr are separate to distinguish normal output from errors but can be combined.
+File descriptors: 0 for stdin, 1 for stdout, 2 for stderr.

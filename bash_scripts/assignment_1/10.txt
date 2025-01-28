@@ -1,0 +1,16 @@
+#How can you use arithmetic operations within a shell script?
+
+Using $(( )) for Arithmetic Expansion
+Example: Add two numbers
+a=10
+b=5
+result=$((a + b))
+
+Using (( )) for Comparison and Arithmetic
+# Example: Loop with arithmetic
+i=1
+while (( i <= 5 ))
+do
+  echo "Iteration $i"
+  ((i++)) 
+done
