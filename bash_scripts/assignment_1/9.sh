@@ -2,7 +2,7 @@
 #Write a shell script that converts all filenames in a directory to lowercase
 
 # Set directory to current directory
-read "Enter a directory: " dir
+read -p "Enter a directory: " dir
 for file in "$dir"/*; do
   if [ -f "$file" ]; then
     # Get the lowercase version of the filename
