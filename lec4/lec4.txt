@@ -1,0 +1,100 @@
+distro
+------
+1)change machine from -> local.conf
+2)add bblayer.conf
+3)add /poky
+
+command: bitbake-layers add-layer <layer_name/>
+used to add the layer to bblayer.conf
+-> env -> path
+
+RPI Img:
+Quick Start
+source poky/oe-init-build-env rpi-build
+Add this layer to bblayers.conf and the dependencies above
+Set MACHINE in local.conf to one of the supported boards
+bitbake core-image-base
+Use bmaptool to copy the generated .wic.bz2 file to the SD card
+Boot your RPI
+
+_________________________________________________________________________________________________
+
+Create layer:
+layer is a set of recipes 
+Layer has an Architecture 
+You can create:
+-Software layer
+-BSP (create or integrate)
+-remove layer -> remove it from config but dir still exists 
+-delete layer -> remove the whole layer and its dir
+
+Procedures:
+1)You have to create a directory, ex:meta-hamada
+2)Use Add-layer command to add it to bblayer.conf
+
+easy way:
+you can use a command to create the layer dir with its architecture:
+(bitbake-layers create-layer)
+then use add-layer
+
+A Recipe has syntax
+1) Download
+2) Configure 
+3) Compile
+_________________________________________________________________________________________________
+Tool Chain
+----------
+gnu tool:
+gcc
+as
+ld
+
+steps&commands:
+-preprocessing    gcc -E
+-compiling        gcc -S
+-assembling       gcc -c
+-link             gcc -
+
+_________________________________________________________________________________________________
+Optimizer
+---------
+.elf }-
+.hex }-  Can be large sized 
+Optimizer used to reduce the size for instance.
+
+Note: When the error in the code is not a syntax error you should disable the optimizer
+----
+
+Optimizer levels:
+-----------------
+-O0 -> No Optimization
+-O1 ->  1,2,3
+-O2 ->  different in 
+-O3 ->  timing & Quality
+-Os ->  reduce size
+-Og ->  debugging
+__________________________________________________________________________________________________
+gnu makefile
+------------
+A makefile is a script used to automate the tool chain compile or build process
+file name must be: makefile
+without any extensions 
+
+target : pre-requisite
+	recipe
+
+   ^
+   |
+Empty Tab
+
+
+ex:
+build : main.c
+	gcc main.c
+
+
+
+To run the makefile in terminal, use the command: make
+If you type make, first rule(target) only will be executed.
+Typing make <rule> will execute a specific rule in makefile.
+
